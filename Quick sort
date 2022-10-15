@@ -1,0 +1,37 @@
+//  quich sort
+
+#include<iostream>
+#define MAX 100
+using namespace std;
+
+int  quich_sort(int arr[], int n, int low, int high)
+{
+    int tmp;
+    int down , up , pivot;
+    if(low<high)
+    {
+        down =low;
+        up=high;
+        pivot=down;
+        while(down<up)
+        {
+            while((arr[down]<=arr[pivot]) && (down<high))
+            down++;
+            while(arr[up]>arr[pivot])
+            {
+                up--;
+            }
+            if(down<up)
+            {
+                tmp=arr[down];
+                arr[down]=arr[up];
+                arr[up]=tmp;
+            }
+        }
+    }
+}
+int main()
+{
+    
+    return 0;
+}
